@@ -1,0 +1,2 @@
+CREATE TABLE [dbo].[SIKAYET_KATEGORI] (
+    [ID]       INT           IDENTITY (1, 1) NOT NU

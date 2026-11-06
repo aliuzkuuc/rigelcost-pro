@@ -1,0 +1,12 @@
+RIGEL COST PRO v4.0.0 — WINDOWS KURULUM PAKETİ
+
+Windows bilgisayarda gerçek Setup.exe üretmek için:
+1. Bu ZIP dosyasını tamamen, tercihen OneDrive dışındaki bir klasöre çıkarın.
+2. `WINDOWS-EXE-OLUSTUR.bat` dosyasına çift tıklayın.
+3. İlk derlemede internet bağlantısı gerekir. Python 3.12 ve Inno Setup gerekirse winget ile kurulur.
+4. İşlem bitince `release` klasöründe `RigelCost-Pro-v4.0.0-Setup.exe` ile taşınabilir ZIP bulunur.
+
+Kullanıcı kayıtları bu kaynak ZIP’ine dahil değildir. Derleme Windows bilgisayarda yapılmalıdır.
+
+
+Eski kayıtlarınız bu kaynak ZIP’ine dahil değildir; Windows kullanıcı verileri genellikle `%APPDATA%\Rigel Alüminyum\Rigel Cost Pro` klasöründedir. Kurulumdan önce bu klasörü ayrıca yedekleyin.

@@ -1,0 +1,3 @@
+CREATE TABLE [dbo].[JOB_AL] (
+    [ID]             UNIQUEIDENTIFIER NOT NULL,
+    [RIGEL

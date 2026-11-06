@@ -1,0 +1,2 @@
+CREATE TABLE [dbo].[KULLANICI_STOK_GRUP] (
+    [ID]           INT IDENTITY (1, 1) NOT NULL,

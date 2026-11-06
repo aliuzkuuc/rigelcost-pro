@@ -1,0 +1,20 @@
+RIGEL COST PRO v4.0.0 — SON PAKET
+
+MAC — İşlemci türüne göre arşivi seçin
+- Apple Silicon (M1/M2/M3/M4): `macOS/RigelCost-Pro-v4.0.0-macOS-AppleSilicon.zip`
+- Intel Mac: `macOS/RigelCost-Pro-v4.0.0-macOS-Intel.zip` (macOS 14+)
+
+Seçtiğiniz ZIP’i açın, içindeki `.app` uygulamasını Applications/Uygulamalar klasörüne sürükleyin ve oradan başlatın. macOS güvenlik uyarısı gösterirse uygulamaya sağ tıklayıp Aç seçin. Python kurulumu veya BASLAT.command gerekmez; her uygulama Python çalışma zamanını içinde taşır.
+
+WINDOWS — Kurulum EXE’sini üretme
+1. `Windows-Kaynak/RigelCost-Windows-Setup-Kaynak.zip` dosyasını Windows bilgisayarda tamamen çıkarın. OneDrive dışındaki bir klasörü tercih edin.
+2. Çıkan klasörde `WINDOWS-EXE-OLUSTUR.bat` dosyasına çift tıklayın.
+3. İlk derlemede internet bağlantısı gerekir. Betik gerekirse Python 3.12 ve Inno Setup’ı winget ile kurar. Pencere kapanana kadar bekleyin.
+4. Sonuçlar kaynak klasöründeki `release` klasörüne yazılır: `RigelCost-Pro-v4.0.0-Setup.exe` ve taşınabilir ZIP.
+5. Derleme bu Mac’te yapılmadı; geçerli bir Windows EXE Windows bilgisayarda bu adımla oluşturulur. Python yalnızca derleme aracıdır; hazırlanan kurulum programını çalıştırmak için son kullanıcıya Python gerekmez.
+
+KAYITLAR VE YEDEK
+Kurulum paketleri kişisel veritabanınızı içermez. Programı kapatın ve önce Windows verilerinizi yedekleyin. Veriler Windows’ta genellikle `%APPDATA%\Rigel Alüminyum\Rigel Cost Pro`, Mac’te `~/Library/Application Support/Rigel Alüminyum/Rigel Cost Pro` klasöründedir. Windows klasörünün içeriğini Mac klasörüne kopyalamadan önce Mac’teki klasörü de yedekleyin. Merkezi SQL Server bağlantı ayarları Windows’a özel şifrelenmiş olabilir; Mac’te yeniden girmeniz gerekebilir. Kurulum klasörünü silmek uygulama kayıtlarını taşımaz.
+
+MİMARİ
+Apple Silicon ve Intel Mac için ayrı `.app` arşivleri hazırlandı; yanlış işlemci arşivi seçilirse uygulama açılmaz. Windows paketi Windows 10/11 x64 içindir.

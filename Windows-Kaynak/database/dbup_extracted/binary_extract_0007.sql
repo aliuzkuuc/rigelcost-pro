@@ -1,0 +1,2 @@
+CREATE TABLE [dbo].[BAKIM_EMIR_KUL] (
+    [ID]            INT IDENTITY (1, 1) NOT NULL,
