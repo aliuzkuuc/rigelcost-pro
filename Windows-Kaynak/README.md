@@ -80,7 +80,9 @@ kendisi tarar ve aynı aktarım tekrar çalıştırıldığında mükerrer kart 
 ### Windows 10/11 — Python gerektirmeyen EXE
 
 Windows bilgisayarda bu kaynak klasörünü ZIP'ten çıkarıp
-`WINDOWS-EXE-OLUSTUR.bat` dosyasına çift tıklayın. Otomatik derleme sonunda
+`WINDOWS-EXE-OLUSTUR.bat` dosyasına çift tıklayın (veya
+`build\windows\build_windows.ps1`). Betik **Python 3.12** ve gerekirse
+Inno Setup 6 kurar; PyInstaller + Setup çıktısı üretir. Derleme sonunda
 `release` klasöründe iki dağıtım seçeneği oluşur:
 
 - `RigelCost-Pro-v4.0.0-Setup.exe`: Kurulum ve kısayol oluşturan paket.
@@ -88,6 +90,10 @@ Windows bilgisayarda bu kaynak klasörünü ZIP'ten çıkarıp
 
 Bu iki çıktı başka Windows 10/11 64-bit bilgisayarlarda Python kurulmadan
 çalışır. Ayrıntılar `WINDOWS-KURULUM-REHBERI.md` dosyasındadır.
+
+> **Doğrulama (DESKTOP-H8O7GQF):** Python 3.12.10 `.venv` +
+> `import main` / `--build-smoke-test` OK; `release\` altında Setup.exe ve
+> Portable ZIP üretildi (`release\` gitignore’dadır).
 
 ### macOS — kaynak koddan çalıştırma
 
@@ -109,10 +115,11 @@ kullanılabilir.
 
 ### Windows'ta kaynak koddan çalıştırma
 
-Önerilen Python: **3.12** (`py -3.12`). Windows kaynak kodu kurulumu için
-`python -m pip install -r requirements.txt` komutunu kullanın. SQL Server
-aktarımı için `pyodbc` yalnız Windows'ta kurulur. Python gerektirmeyen
-EXE/kurulum paketi üretmek için yukarıdaki Windows yönergelerini izleyin.
+Önerilen Python: **3.12** (`py -3.12 -m venv .venv`). Windows kaynak kodu
+kurulumu için `python -m pip install -r requirements.txt` komutunu kullanın.
+SQL Server aktarımı için `pyodbc` yalnız Windows'ta kurulur. Python
+gerektirmeyen EXE/kurulum paketi üretmek için yukarıdaki Windows
+yönergelerini izleyin.
 
 Program açılışında giriş zorunludur: ilk kurulumda **Patron** hesabı
 oluşturulur; sonraki açılışlarda kullanıcı adı ve şifre istenir. Başarılı
