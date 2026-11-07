@@ -5,6 +5,13 @@ hesaplayan ve ayrıntılı gider kayıtlarını yöneten masaüstü uygulamasıd
 
 Arayüz ve geliştirme: **ALİ UZKUC**
 
+> **Demo / yerel kontrol — fabrika production’a alma**  
+> Bu sürüm tek PC’de doğrulama ve demo içindir. Yerel ERP iş akışı,
+> `docs/GERCEK-AKIS-DENETIMI.md` kabul listesi geçmeden **gerçek fabrika
+> production’a alınmamalıdır**. Maliyet hesaplama modülü ayrıdır ve korunur.
+> Kullanıcı verisi: `%APPDATA%\Rigel Alüminyum\Rigel Cost Pro` (Roaming).
+> Yedek: `scripts\backup_appdata.ps1`.
+
 ## İşletme modülleri
 
 Rigel'e özgü açılır sol menü aşağıdaki departmanlara ayrılmıştır:
@@ -26,12 +33,14 @@ kalıp, satış siparişi, üretim, iş emirleri, paket ve sevkiyat çekirdek ek
 aynı ilişkisel yerel veritabanına bağlanmıştır. Satın alma ve bakımın ayrıntılı
 canlı akışları sonraki kontrol aşamasındadır.
 
-Bağlantılı canlı iş akışı kayıtları `rigel_workflow.db` içinde; mevcut maliyet
-ve gider kayıtlarından ayrı tutulur. Profilin üretim özelliklerine uyan reçete
-ve rota seçilir. Satış siparişi onaylandığında üretim emri ve sıralı iş emirleri
-oluşur; bir istasyon bitmeden sonraki istasyona giriş engellenir. Son işlem
-mamul stok oluşturur; paketleme sevke hazır stoka, sevkiyat ise teslim edilen
-miktara bağlı çalışır.
+Bağlantılı canlı iş akışı kayıtları `rigel_operations.db` içinde; mevcut maliyet
+ve gider kayıtlarından ayrı tutulur. Aynı Roaming klasöründe ayrıca
+`security.db` (kullanıcılar), `inventory.db` (stok), `erp.db` (eski ERP
+yardımcı), `expense_details.json` ve `market_cache.json` bulunur. Profilin
+üretim özelliklerine uyan reçete ve rota seçilir. Satış siparişi onaylandığında
+üretim emri ve sıralı iş emirleri oluşur; bir istasyon bitmeden sonraki
+istasyona giriş engellenir. Son işlem mamul stok oluşturur; paketleme sevke
+hazır stoka, sevkiyat ise teslim edilen miktara bağlı çalışır.
 
 Pres fişlerinde brüt/net fire, fire yüzdesi, kg/saat, teorik net kg, gramaj
 farkı ve tenefer kullanımı otomatik hesaplanır. Kalıp kartlarında kalan ömür
@@ -85,7 +94,7 @@ Bu iki çıktı başka Windows 10/11 64-bit bilgisayarlarda Python kurulmadan
 Proje klasöründe:
 
 ```bash
-python3.14 -m venv .venv
+python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
@@ -100,13 +109,15 @@ kullanılabilir.
 
 ### Windows'ta kaynak koddan çalıştırma
 
-Windows kaynak kodu kurulumu için `python -m pip install -r requirements.txt`
-komutunu kullanın. SQL Server aktarımı için `pyodbc` yalnız Windows'ta kurulur.
-Python gerektirmeyen EXE/kurulum paketi üretmek için yukarıdaki Windows
-yönergelerini izleyin.
+Önerilen Python: **3.12** (`py -3.12`). Windows kaynak kodu kurulumu için
+`python -m pip install -r requirements.txt` komutunu kullanın. SQL Server
+aktarımı için `pyodbc` yalnız Windows'ta kurulur. Python gerektirmeyen
+EXE/kurulum paketi üretmek için yukarıdaki Windows yönergelerini izleyin.
 
-Program kullanıcı/şifre ve lisans ekranı göstermeden doğrudan HOME
-sayfasında açılır. Lisanslama sonraki geliştirme aşamasına ertelenmiştir.
+Program açılışında giriş zorunludur: ilk kurulumda **Patron** hesabı
+oluşturulur; sonraki açılışlarda kullanıcı adı ve şifre istenir. Başarılı
+girişten sonra HOME (yönetim paneli) açılır. Ayrı bir lisans ekranı yoktur;
+lisanslama sonraki geliştirme aşamasına ertelenmiştir.
 
 ## Üretime göre hesap
 

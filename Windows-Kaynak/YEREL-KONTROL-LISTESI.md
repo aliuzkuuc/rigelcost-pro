@@ -1,15 +1,24 @@
 # Rigel Cost Pro v4.0.0 — Yerel Windows Kontrolü
 
+> **Demo / yerel kontrol — fabrika production’a alma**  
+> Bu kontrol listesi tek PC doğrulaması içindir. Yerel ERP,
+> `docs/GERCEK-AKIS-DENETIMI.md` kabulü geçmeden gerçek fabrika production’a
+> alınmamalıdır. Maliyet modülü korunur. Veri klasörü:
+> `%APPDATA%\Rigel Alüminyum\Rigel Cost Pro` (Roaming). Yedek komutu:
+> `scripts\backup_appdata.ps1`.
+
 Bu sürümde amaç, merkez SQL Server kurmadan önce tek Windows bilgisayarda
 bağlantılı işletme akışını ve mevcut maliyet modülünü doğrulamaktır. Ana veri
 yerel ilişkisel SQLite veritabanında tutulur. Merkez SQL Server bu kontrolden
-sonra devreye alınacaktır.
+sonra (ve GERCEK-AKIS kabulünden sonra) devreye alınacaktır.
 
 ## Kurulum
 
 1. Çalışan Rigel Cost Pro'yu kapatın.
-2. Mümkünse `%LOCALAPPDATA%\Rigel Alüminyum\Rigel Cost Pro` klasörünün bir
-   yedeğini alın.
+2. `%APPDATA%\Rigel Alüminyum\Rigel Cost Pro` klasörünün yedeğini alın
+   (`scripts\backup_appdata.ps1` veya elle kopya). Bu klasörde
+   `rigel_operations.db`, `security.db`, `inventory.db`, `erp.db` ve JSON
+   önbellekler birlikte bulunur.
 3. `WINDOWS-EXE-OLUSTUR.bat` dosyasını çalıştırın.
 4. `release\RigelCost-Pro-v4.0.0-Setup.exe` dosyasını çalıştırın.
 5. Önceki sürüm kuruluysa aynı hedef klasöre kurabilirsiniz. Kullanıcı veri
